@@ -1,15 +1,27 @@
 grammar ProductTest
 	include Number
 	
-	rule power
-		multiple "^" number {
+	rule final
+		power {
 			def result
-				multiple.text_value.to_i ** number.text_value.to_i
+				elements.each do |n|
+					puts n.text_value
+				end
+				pow(number)
 			end
 		}
 	end
 	
+	rule power
+		multiple "^" number {
+		}
+	end
+	
 	rule multiple
-		number '*' number
+		number '*' number {
+			def merge
+				number1.text_value.to_i*number2.text_value.to_i
+			end
+		}
 	end
 end
