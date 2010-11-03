@@ -1,0 +1,5 @@
+grammar Number
+	rule number
+  	[1-9]*
+	end
+end

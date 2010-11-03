@@ -1,0 +1,12 @@
+grammar SimpleTest
+	include Number
+	
+	rule additive
+   number '+' number {
+	      def value
+					number2.text_value.to_i + number1.text_value.to_i
+				end
+	    }
+  end
+  
+end

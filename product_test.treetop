@@ -1,0 +1,15 @@
+grammar ProductTest
+	include Number
+	
+	rule power
+		multiple "^" number {
+			def result
+				multiple.text_value.to_i ** number.text_value.to_i
+			end
+		}
+	end
+	
+	rule multiple
+		number '*' number
+	end
+end
